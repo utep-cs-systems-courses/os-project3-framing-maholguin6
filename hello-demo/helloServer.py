@@ -30,6 +30,8 @@ s.listen(1)              # allow only one outstanding request
 while True:
     conn, addr = s.accept() # wait until incoming connection request (and accept it)
     if os.fork() == 0:      # child becomes server
+        
+    
         print('Connected by', addr)
         conn.send(b"hello")
         time.sleep(0.25);       # delay 1/4s
